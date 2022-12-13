@@ -27,11 +27,14 @@ print("smallest number among tree is - ", number_compare_smallest(88, 0, -1))
 
 # модуль числа (функція приймає одне значення та повертає його модуль);
 
-def num_module(z):
-    return abs(z)
+def num_module(a):
+    if a < 0:
+        return a * -1
+    else:
+        return a
 
 
-print("module is ", num_module(-5))
+print("module is ", num_module(-555))
 
 # виведення на екран суми значень (функція приймає
 # 2 значення та лише виводить їхню суму на екран);
