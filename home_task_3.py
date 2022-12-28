@@ -7,6 +7,7 @@ var1 = 'test'
 var2 = 'test'
 var3 = 'test'
 
+
 # print("var1: ", var1, "Type :", type(var1), "ID: ", id(var1))
 # print("var2: ", var2, "Type :", type(var2), "ID: ", id(var2))
 # print("var3: ", var3, "Type :", type(var3), "ID: ", id(var3))

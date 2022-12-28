@@ -10,6 +10,9 @@ def number_compare_biggest(a, b):
 print("biggest number among two is - ", number_compare_biggest(150, -150))
 
 
+# if __name__=='__main__':
+
+
 # визначення меншого числа з трьох
 # (аналогічно до попередньої задачі);
 
@@ -65,4 +68,5 @@ def is_positive(x):
         return "Pls, pass number format"
 
 
-print("polyarity of passed number is: ", is_positive(0))
+print("polarity of passed number is: ", is_positive(0))
+
