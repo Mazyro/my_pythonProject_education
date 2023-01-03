@@ -1,6 +1,6 @@
 def get_even_or_odd_numbers(a, b):
     return list(filter(lambda x: x % 2 == 1-int(b), range(a)))
-    # return list(filter(lambda x: x % 2 == 1-b, range(a))) # треба було обгорнути в int
+    # return list(filter(lambda x: x % 2 == 1-b, range(a))) # треба було обгорнути b в int
 
 
 def search_words(he, b):
