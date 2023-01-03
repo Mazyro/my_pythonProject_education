@@ -1,9 +1,12 @@
 def get_even_or_odd_numbers(a, b):
-    return list(filter(lambda x: x % 2 == 1-b, range(a)))
+    return list(filter(lambda x: x % 2 == 1-int(b), range(a)))
+    # return list(filter(lambda x: x % 2 == 1-b, range(a))) # треба було обгорнути в int
 
 
 def search_words(he, b):
-    return list([i for i in filter(lambda a: a.find(he) >= 0, b)])
+    # return [i for i in filter(lambda a: a.find(he) >= 0, b)]
+    # або
+    return [i for i in filter(lambda a: he in a, b)]
 
 
 def flatten(arr):
