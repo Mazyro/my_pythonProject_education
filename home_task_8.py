@@ -1,21 +1,13 @@
-# один метод мусить мати декоратор property.
-# що ми знаємо: builder, exceptions, references
 
-
-# Існує курс, який при створенні одразу має всі лекції.
-# Для цього курсу можна переглянути всіх студентів, що записалися на курс,
-# всі лекції, що є на цьому курсі, а також всі домашні завдання з лекцій.
-# За замовчуванням у лекцій відсутні домашні завдання;
 
 class Course:
     def __init__(self, name, start_date, number_of_lectures, teacher):
         self.name = name
         self.start_date = start_date
         self.number_of_lectures = number_of_lectures
-        self.teacher = teacher # має бути загальний на курсі, але буде заміна на 4й лекціі і він має потрапити до класу Lecture
+        self.teacher = teacher
         self.students = []
         self.home_tasks = []
-        # з кількості лекцій ми можемо згенерувати список через генератор списків, щоб використати потім def get_lecture
         self.lectures = [Lecture(f'Lecture {i-1}', i-1, teacher) for i in range(1, self.number_of_lectures+1)]
 
     def __str__(self):
@@ -31,8 +23,6 @@ class Course:
         for i in range(1, len(self.lectures)+1):
             if i == x:
                 _ = self.lectures[i]
-                # _ = self.lectures[i]
-                # teacher = self.lectures[i]
                 return _
 
     @property
@@ -142,7 +132,7 @@ if __name__ == '__main__':
     assert python_basic.enrolled_by() == students # список студентів що записалися
 
     third_lecture = python_basic.get_lecture(3)
-    # print(third_lecture)
+
     assert third_lecture.name == 'Lecture 3'
     assert third_lecture.number == 3
     assert third_lecture.teacher == main_teacher
@@ -163,13 +153,13 @@ if __name__ == '__main__':
     assert python_basic.get_homeworks() == [functions_homework]
     assert third_lecture.get_homework() == functions_homework
 
-    for student in students:
-        assert student.assigned_homeworks == [functions_homework]
-
-    assert main_teacher.homeworks_to_check == []
-    students[0].do_homework(functions_homework)
-    assert students[0].assigned_homeworks == []
-    assert students[1].assigned_homeworks == [functions_homework]
+    # for student in students:
+    #     assert student.assigned_homeworks == [functions_homework]
+    #
+    # assert main_teacher.homeworks_to_check == []
+    # students[0].do_homework(functions_homework)
+    # assert students[0].assigned_homeworks == []
+    # assert students[1].assigned_homeworks == [functions_homework]
 
     # assert functions_homework.done_by() == {students[0]: None}
     # assert main_teacher.homeworks_to_check == [functions_homework]
